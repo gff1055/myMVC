@@ -1,0 +1,28 @@
+{
+	"name":"son/mvc",
+
+	"require":{
+		"php":">=5.3"
+	},
+
+	"minimum-stability": "alpha",
+
+	"authors":[
+		{
+			"name": "Guilherme Ferreira",
+			"email": "guilhermeferreira@gmail.com"
+		}
+	],
+
+	"autoload":{
+		"psr-0":{
+			"SON": "vendor",
+			"App": "/"
+		}
+	},
+
+	"config":{
+		"bin-dir": "bin"
+	}
+
+}
