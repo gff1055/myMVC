@@ -8,5 +8,8 @@ Init = nome da classe do arquivo init.php
 
 $init = new \App\Init;
 
+/* retornando a rota */
+echo $init->getUrl();
+
 
 ?>
