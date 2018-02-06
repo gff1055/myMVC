@@ -13,7 +13,9 @@ class Init{
 	public function __construct(){
 
 		/* inicializando as rotas */
+
 		$this->initRoutes();
+
 		$this->run($this->getUrl());
 
 	}
@@ -28,9 +30,11 @@ class Init{
 		/* Gravando as rotas no atributo de rotas */
 		$this->setRoutes($ar);
 
+
 	}
 
 	public function run($url){
+
 		array_walk($this->routes, function($route) use($url){
 			if($url == $route['route']){
 				echo "encontrou";
