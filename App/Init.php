@@ -13,10 +13,13 @@ class Init{
 	public function __construct(){
 
 		/* inicializando as rotas */
-
 		$this->initRoutes();
 
-		$this->run($this->getUrl());
+		//recebendo a rota inserida pelo usuario
+		$rota=$this->getUrl();
+
+		// verificando se a rota existe
+		$this->run($rota);
 
 	}
 
@@ -25,7 +28,7 @@ class Init{
 
 		/* inicializando rotas */
 		$ar['home'] = array('route'=>'/','controller'=>'index','action'=>'index');
-		$ar['empresa'] = array('route'=>'/empresa','controller'=>'index','action'=>'empresa');
+		$ar['empresa'] = array('route'=>'/myMVC/Public/empresa','controller'=>'index','action'=>'empresa');
 		
 		/* Gravando as rotas no atributo de rotas */
 		$this->setRoutes($ar);
@@ -33,11 +36,26 @@ class Init{
 
 	}
 
+	//metodo para mostrar se a rota foi encontrada ou nao
 	public function run($url){
 
+		//percorrendo o array de rotas em busca da rota digitada
 		array_walk($this->routes, function($route) use($url){
 			if($url == $route['route']){
-				echo "encontrou";
+
+				// class recebe o nome da classe controller associada a rota $url
+				$class = "App\Controllers\\".ucfirst($route['controller']);
+
+				// action recebe o nome do metodo(action) da classe controller associada a rota $url
+				$action = $route['action'];
+
+				// instanciando a classe controller
+				$controller = new $class;
+
+				// chamando o metodo(action)
+				$controller->$action();
+
+
 			}
 		});
 	}
