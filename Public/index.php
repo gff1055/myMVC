@@ -1,5 +1,5 @@
 <?php
-require_once '../Vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 /*
 App = nome do namespace definido no arquivo init.php
