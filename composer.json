@@ -14,10 +14,10 @@
 		}
 	],
 
-	"autoload": {
-		"psr-4": {
-			"SON\\" : "vendor/SON/",
-			"App\\" : "App/"
+	"autoload":{
+		"psr-0":{
+			"SON": "vendor",
+			"App": "/"
 		}
 	},
 

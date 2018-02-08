@@ -1,10 +1,8 @@
 <?php
 
-/*
-* Classe de configuracao = configura tudo que precisar para rodar a aplicacao
-*/
 
 namespace SON\Init;
+
 
 abstract class Bootstrap{
 
@@ -69,9 +67,5 @@ abstract class Bootstrap{
 
 	}
 }
-
-
-
-
 
 ?>
