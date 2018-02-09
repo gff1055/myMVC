@@ -1,8 +1,0 @@
-RewriteEngine On 
-
-RewriteCond %{REQUeST_FILENAME} –s [OR]
-RewriteCond %{REQUeST_FILENAME} –l [OR]
-RewriteCond %{REQUeST_FILENAME} –d
-
-RewriteRule ^.*s – [NC,L]
-RewriteRule ^.*s index.php [NC,L]
