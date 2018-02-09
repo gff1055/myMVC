@@ -8,13 +8,13 @@ class Index{
 
 	// action
 	public function empresa(){
-		echo "Controller: Index, Action: Empresa";
+		include '../App/views/Index/Empresa.php';
 	}
 
 
 	// action
 	public function index(){
-		echo "Controller: Index, Action: Index";
+		include '../App/views/Index/Index.php';;
 	}
 
 }
