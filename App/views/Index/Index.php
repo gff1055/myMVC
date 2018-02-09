@@ -1,1 +1,9 @@
-Controller: Index, Action: Index
+<h1>Index</h1>
+
+<ul>
+
+	<?php foreach($this->view->nomes as $nome): ?>
+		<li><?php echo $nome; ?></li>
+	<?php endforeach;?>
+
+</ul>
