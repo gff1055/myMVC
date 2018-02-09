@@ -11,6 +11,12 @@ class Index{
 		echo "Controller: Index, Action: Empresa";
 	}
 
+
+	// action
+	public function index(){
+		echo "Controller: Index, Action: Index";
+	}
+
 }
 
 ?>

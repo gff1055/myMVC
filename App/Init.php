@@ -5,16 +5,11 @@
 namespace App;
 use SON\Init\Bootstrap;
 
-
-
-
-
-
 class Init extends Bootstrap{
 
 
 	/* Metodo para inicializar as rotas e setar as rotas*/
-	public function initRoutes(){
+	protected function initRoutes(){
 
 		/* inicializando rotas */
 		$ar['home'] = array('route'=>'/myMVC/public/','controller'=>'index','action'=>'index');

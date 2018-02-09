@@ -23,6 +23,7 @@ abstract class Bootstrap{
 
 	}
 
+
 	/* Metodo para inicializar as rotas */
 	abstract protected function initRoutes();
 
@@ -34,7 +35,7 @@ abstract class Bootstrap{
 			if($url == $route['route']){
 
 				// class recebe o nome da classe controller associada a rota $url
-				$class = "App\Controllers\\".ucfirst($route['controller']);
+				$class = "App\\Controllers\\".ucfirst($route['controller']);
 
 				// action recebe o nome do metodo(action) da classe controller associada a rota $url
 				$action = $route['action'];
