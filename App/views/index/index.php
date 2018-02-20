@@ -1,9 +1,9 @@
-<h1>Index</h1>
+	<h1>Index</h1>
 
-<ul>
+	<ul>
 
-	<?php foreach($this->view->nomes as $nome): ?>
-		<li><?php echo $nome; ?></li>
-	<?php endforeach;?>
+		<?php foreach($this->view->nomes as $nome): ?>
+			<li><?php echo $nome; ?></li>
+		<?php endforeach;?>
 
-</ul>
+	</ul>

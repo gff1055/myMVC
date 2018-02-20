@@ -7,6 +7,7 @@ namespace SON\Controller;
 class Action{
 
 	protected $view;
+	protected $action;
 
 	//construtor
 	public function __construct(){
@@ -17,20 +18,39 @@ class Action{
 	}
 
 
-	//Vai adivinhar em qual metodo se esta executando. E de acordo com isso vai renderizar o template (include)
-	public function render($action){
+	//Vai adivinhar em qual metodo(action) se esta executando. E de acordo com isso vai renderizar o template (include)
+	public function render($action, $layout=true){
 
-		$atual=get_class($this);
-		// pegando o nome completo da classe(namespace\classe) que esta sendo executada no momento
+		$this->action = $action;
+		// recebendo o nome da action atual
 
-		$nomeClass = str_replace("App\\Controllers\\","",$atual);
-		//nomeClass recebe o nome da classe sem o namespace
+		if($layout==true && file_exists("../App/views/layout.php")){
 
-		$singleClassName=strtolower($nomeClass);
-		// variavel recebe o nome da classe toda em letra minuscula
+			include_once '../App/views/layout.php';
+			//chamando o layout
+		}
 
-		include_once '../App/views/'.$singleClassName.'/'.$action.'.php';
+		else{
 
+			//chamando o conteudo da action
+			$this->content();
+			
+		}
+	}
+
+	// metodo para imprimir o conetudo da action atual
+	public function content(){
+
+			$atual=get_class($this);
+			// pegando o nome completo da classe(namespace\classe) que esta sendo executada no momento
+
+			$nomeClass = str_replace("App\\Controllers\\","",$atual);
+			//o namespace da classe é retirado e atribuido a variavel ($nomeClass) apenas o nome da mesma
+
+			$singleClassName=strtolower($nomeClass);
+			// variavel recebe o nome da classe toda em letra minuscula
+
+			include_once '../App/views/'.$singleClassName.'/'.$this->action.'.php';
 	}
 
 
