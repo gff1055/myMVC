@@ -23,7 +23,7 @@ class Action{
 		$atual=get_class($this);
 		// pegando o nome completo da classe(namespace\classe) que esta sendo executada no momento
 
-		$nomeClass = str_replace("App\Controllers\\","",$atual);
+		$nomeClass = str_replace("App\\Controllers\\","",$atual);
 		//nomeClass recebe o nome da classe sem o namespace
 
 		$singleClassName=strtolower($nomeClass);

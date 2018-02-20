@@ -26,7 +26,7 @@ class Index extends Action{
 
 	// action
 	public function empresa(){
-		include '../App/views/Index/Empresa.php';
+		$this->render['empresa'];
 	}
 }
 
