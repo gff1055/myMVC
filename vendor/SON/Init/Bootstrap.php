@@ -32,6 +32,7 @@ abstract class Bootstrap{
 
 		//percorrendo o array de rotas em busca da rota digitada
 		array_walk($this->routes, function($route) use($url){
+			
 			if($url == $route['route']){
 
 				// class recebe o nome da classe controller associada a rota $url
