@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use SON\Controller\Action;
-use \App\Models\Artigo;
+use \SON\Di\Container;
 
 //classe controller
 class Index extends Action{
@@ -11,8 +11,8 @@ class Index extends Action{
 	// action
 	public function index(){
 
-		$artigo = new Artigo(\App\Init::getDB())
-		//chamando o model
+		$artigo = Container::getClass("Artigo");
+		//recebendo nova instancia da classe
 
 		$artigos = $artigos->fetch_all();
 		
