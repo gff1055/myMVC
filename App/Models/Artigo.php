@@ -2,23 +2,10 @@
 
 namespace App\Models;
 
-class Artigo{
+use SON\Db\Table;
 
-	protected $db;
-
-	public function __construct(\PDO $db){
-
-		$this->db=$db;
-
-	}
-
-	// metodo para listar todos os registros da tabela
-	public function fetchAll(){
-		$query = "Select * from artigos";
-		return $this->db->query($query);
-	}
-
-
+class Artigo extends Table{
+	protected $table = "artigos";
 }
 
 ?>
