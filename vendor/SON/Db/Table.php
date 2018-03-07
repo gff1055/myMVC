@@ -21,8 +21,12 @@ class Table{
 
 	public function find($id){
 		$query = "Select * from {$this->table} where id=:id";
-		//inacabado/
-		return $this->db->query($query);
+		$stmt=$this->db->prepare($query);
+		$stmt->bindParam(":id",$id);
+		$stmt->execute();
+
+		$res=$stmt->fetch();
+		return $res;
 	}
 
 

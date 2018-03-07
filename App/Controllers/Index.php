@@ -14,7 +14,7 @@ class Index extends Action{
 		$artigo = Container::getClass('Artigo');
 		//recebendo nova instancia da classe
 
-		$artigos = $artigo->fetchAll();
+		$artigos = $artigo->find(1);
 		
 		$this->view->artigos = $artigos;
 		//atribuindo dados para a view: adicionando o atributo $nomes ao objeto view
