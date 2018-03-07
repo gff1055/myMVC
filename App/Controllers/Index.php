@@ -11,10 +11,10 @@ class Index extends Action{
 	// action
 	public function index(){
 
-		$artigo = Container::getClass("Artigo");
+		$artigo = Container::getClass('Artigo');
 		//recebendo nova instancia da classe
 
-		$artigos = $artigos->fetch_all();
+		$artigos = $artigo->fetchAll();
 		
 		$this->view->artigos = $artigos;
 		//atribuindo dados para a view: adicionando o atributo $nomes ao objeto view
@@ -25,7 +25,7 @@ class Index extends Action{
 
 	// action
 	public function empresa(){
-		$this->render['empresa'];
+		$this->render('empresa');
 	}
 }
 

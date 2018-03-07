@@ -20,8 +20,8 @@ class Init extends Bootstrap{
 	}
 
 	// metodo para criacao de conexao com o banco de dados
-	public static function getDB(){
-		$db=new \PDO("mysql:host=localhost; dbname=mvc","root","root");
+	public static function getDb(){
+		$db=new \PDO("mysql:host=localhost; dbname=mvc","root","");
 		return $db;
 	}
 
